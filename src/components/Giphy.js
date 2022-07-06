@@ -35,80 +35,14 @@ const Giphy = () => {
         // <div key={el.id} className=" ml-2">
         //   <img src={el.images.fixed_height_downsampled.url} />
         // </div>
-        <>
-          <div class="col-sm-4" key={el.id}>
-            <div class="card">
-              <div class="image">
-                <img src={el.images.fixed_height.url} />
-              </div>
-            </div>
-          </div>
 
-          {/* <div class="col-sm-4">
-            <div class="card">
-              <div class="image">
-               <img src={el.images.fixed_height.url} />
-              </div>
-              <div class="card-inner">
-                <div class="header">
-                  <h2>Title</h2>
-                  <h3>Sub-Head</h3>
-                </div>
-                <div class="content">
-                  <p>Content area</p>
-                </div>
-              </div>
+        <div className="col-sm-4" key={el.id}>
+          <div className="card">
+            <div className="image">
+              <img src={el.images.fixed_height_small_still.url} />
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="image">
-               <img src={el.images.fixed_height.url} />
-              </div>
-              <div class="card-inner">
-                <div class="header">
-                  <h2>Title</h2>
-                  <h3>Sub-Head</h3>
-                </div>
-                <div class="content">
-                  <p>Content area</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="image">
-             <img src={el.images.fixed_height.url} />
-              </div>
-              <div class="card-inner">
-                <div class="header">
-                  <h2>Title</h2>
-                  <h3>Sub-Head</h3>
-                </div>
-                <div class="content">
-                  <p>Content area</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="image">
-            <img src={el.images.fixed_height.url} />
-              </div>
-              <div class="card-inner">
-                <div class="header">
-                  <h2>Title</h2>
-                  <h3>Sub-Head</h3>
-                </div>
-                <div class="content">
-                  <p>Content area</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </>
+        </div>
       );
     });
   };
