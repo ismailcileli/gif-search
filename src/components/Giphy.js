@@ -85,22 +85,24 @@ const Giphy = () => {
 
   return (
     <div className="m-5">
-      <form className="form-inline justify-content-center m-4">
-        <input
-          value={search}
-          onChange={handleSearchChange}
-          type="text"
-          placeholder="Search"
-          className="form-control"
-        />
-        <button
-          onClick={handleSubmit}
-          type="submit"
-          className="btn myButton ml-3"
-        >
-          Go
-        </button>
-      </form>
+      <div className="searchStyle">
+        <form className="form-inline justify-content-center m-4 mt-2 mb-5">
+          <input
+            value={search}
+            onChange={handleSearchChange}
+            type="text"
+            placeholder="Search"
+            className="form-control mt-2 inputStyle"
+          />
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className="btn myButton ml-3 mt-2"
+          >
+            Go
+          </button>
+        </form>
+      </div>
 
       <div className=" containera mainContainer ">{renderGifs()}</div>
       {/* <Pagination

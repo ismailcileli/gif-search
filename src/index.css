@@ -24,8 +24,7 @@ code {
 }
 .icon-style:hover {
   animation: none;
-  background: #fff;
-  color: #7d9d9c;
+  background: #fff; 
   border: 2px solid #7d9d9c;
 }
 @keyframes movebtn {
