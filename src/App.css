@@ -1,29 +1,83 @@
-body {
-  background: #57b2a9;
+:root {
+  --buttonBackground: #7D9D9C;
+  --white: #F9F9F9;
+  --cardBackground:#F9F9F9
 }
 
-.card {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.2s ease-in-out;
-  box-sizing: border-box;
-  margin-top:10px;
-  margin-bottom:10px;
-  background-color:#FFF;
+
+.containera {
+  -moz-column-count: 1;
+  column-count: 1;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -moz-column-fill: balance;
+  column-fill: balance;
+  margin: 20px auto 0;
+  padding: 2rem;
+}
+.containera .item {
+  display: flex;
+  margin: 0 0 20px;
+  page-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  break-inside: avoid;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color:var(--cardBackground) ;
+}
+.containera .item img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 0px) and (max-width: 350px){
+  .myButton{
+    font-size: 12px;
+  }
+  .containera {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (min-width: 350px) and (max-width: 500px){
+  .myButton{
+    font-size: 13px;
+  }
+  .containera {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
 }
 
-.card:hover {
-  box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+@media (min-width: 500px) and (max-width: 700px){
+  .myButton{
+    font-size: 23px;
+  }
+  .containera {
+    -moz-column-count: 3;
+    column-count: 3;
+  }
 }
-.card > .card-inner {
-  padding:10px;
+
+@media  (min-width: 700px) and (max-width: 1200px){
+  
+  .containera {
+    -moz-column-count: 4;
+    column-count: 4;
+  }
 }
-.card .header h2, h3 {
-  margin-bottom: 0px;
-  margin-top:0px;
+@media (min-width: 1200px)   {
+  .containera {
+    -moz-column-count: 5;
+    column-count: 5;
+  }
 }
-.card .header {
-  margin-bottom:5px;
+body{
+  background-color: var(--white);
 }
-.card img{
-  width:100%;
+.myButton{
+  border-color: var(--buttonBackground);
+  background-color: var(--buttonBackground);
+  color:#fefefe
 }

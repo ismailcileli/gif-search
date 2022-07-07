@@ -5,18 +5,18 @@ import Pagination from "./Pagination";
 const Giphy = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [gifsPerPage, setGifsPerPage] = useState(12);
-  const indexOfLastPost = currentPage * gifsPerPage;
-  const indexOfFirstPost = indexOfLastPost - gifsPerPage;
-  const currentGifs = data.slice(indexOfFirstPost, indexOfLastPost);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [gifsPerPage, setGifsPerPage] = useState(12);
+  // const indexOfLastPost = currentPage * gifsPerPage;
+  // const indexOfFirstPost = indexOfLastPost - gifsPerPage;
+  // const currentGifs = data.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const results = await axios("https://api.giphy.com/v1/gifs/trending", {
           params: {
-            api_key: "t3Pxq4J6kaMBb1cKzbPyrd5TJ5c40wxo",
+            api_key: `${process.env.REACT_APP_API_URL}`,
             limit: 100,
           },
         });
@@ -30,19 +30,34 @@ const Giphy = () => {
   }, []);
 
   const renderGifs = () => {
-    return currentGifs.map((el) => {
+    return data.map((el) => {
       return (
         // <div key={el.id} className=" ml-2">
         //   <img src={el.images.fixed_height_downsampled.url} />
         // </div>
 
-        <div className="col-sm-4" key={el.id}>
-          <div className="card">
-            <div className="image">
-              <img src={el.images.fixed_height_small_still.url} />
+        <div>
+          <div className="card item shadow ">
+            <img src={el.images.fixed_height.url} />
+            <div className="card-body ">
+              <h5 className="card-title"> {el.title} </h5>
+              <a
+                target="blank"
+                href={el.images.fixed_height.url}
+                className="btn  myButton"
+              >
+                Open Gif
+              </a>
             </div>
           </div>
         </div>
+        // <div className="col-sm-4" key={el.id}>
+        //   <div className="card">
+        //     <div className="image">
+        //       <img src={el.images.fixed_height_small_still.url} />
+        //     </div>
+        //   </div>
+        // </div>
       );
     });
   };
@@ -57,7 +72,7 @@ const Giphy = () => {
       try {
         const results = await axios("https://api.giphy.com/v1/gifs/search", {
           params: {
-            api_key: "t3Pxq4J6kaMBb1cKzbPyrd5TJ5c40wxo",
+            api_key: `${process.env.REACT_APP_API_URL}`,
             q: search,
           },
         });
@@ -75,29 +90,27 @@ const Giphy = () => {
           value={search}
           onChange={handleSearchChange}
           type="text"
-          placeholder="search"
+          placeholder="Search"
           className="form-control"
         />
         <button
           onClick={handleSubmit}
           type="submit"
-          className="btn btn-primary  ml-3"
+          className="btn myButton ml-3"
         >
           Go
         </button>
       </form>
 
-      <div className="container justify-content-center d-flex flex-wrap ">
-        {renderGifs()}
-      </div>
-      <Pagination
+      <div className=" containera mainContainer ">{renderGifs()}</div>
+      {/* <Pagination
         currentPage={currentPage}
         gifsPerPage={gifsPerPage}
         totalGifs={data.length}
         paginate={(number) => setCurrentPage(number)}
         next={() => setCurrentPage(currentPage + 1)}
         previous={() => setCurrentPage(currentPage - 1)}
-      />
+      /> */}
     </div>
   );
 };
