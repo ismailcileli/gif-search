@@ -1,13 +1,22 @@
 :root {
-  --buttonBackground: #7D9D9C;
-  --white: #F9F9F9;
-  --cardBackground:#F9F9F9;
-  --buttonBackground2:#5d8987;
+  --buttonBackground: #7d9d9c;
+  --white: #f9f9f9;
+  --cardBackground: #f9f9f9;
+  --buttonBackground2: #5d8987;
+  --lightWhite:#fefefe
 }
-
-.myButton:hover{
-background-color: var(--buttonBackground2);
-color: var(--white);
+@media (pointer:none), (pointer:coarse) {
+  .containera .item {
+    box-shadow: none !important;
+  }
+  .containera .item:hover {
+    transform: none;
+    transition: none;
+  }
+}
+.myButton:hover {
+  background-color: var(--buttonBackground2);
+  color: var(--white);
 }
 .containera {
   -moz-column-count: 1;
@@ -16,7 +25,7 @@ color: var(--white);
   column-gap: 20px;
   -moz-column-fill: balance;
   column-fill: balance;
-  margin: 20px auto 0; 
+  margin: 20px auto 0;
 }
 .containera .item {
   display: flex;
@@ -28,53 +37,51 @@ color: var(--white);
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-color:var(--cardBackground) ;
+  background-color: var(--cardBackground);
   transition: all 0.4s ease-in-out;
   border-radius: 20px;
 }
 .containera .item:hover {
-   transform: scale(1.05) !important; 
-   z-index: 1;
-
+  transform: scale(1.05) !important;
+  z-index: 1;
 }
 .containera .item img {
   width: 100%;
   height: auto;
   border-radius: 20px;
-
 }
-@media (min-width: 0px) and (max-width: 350px){
-  .myButton{
+@media (min-width: 0px) and (max-width: 350px) {
+  .myButton {
     font-size: 12px;
   }
-  .card-title{
+  .card-title {
     font-size: 13px;
   }
   .containera {
     -moz-column-count: 2;
     column-count: 2;
   }
+  
 }
-@media (min-width: 350px) and (max-width: 500px){
-  .myButton{
+@media (min-width: 350px) and (max-width: 500px) {
+  .myButton {
     font-size: 13px;
   }
-  .card-title{
+  .card-title {
     font-size: 13px;
   }
   .containera {
     -moz-column-count: 2;
     column-count: 2;
     font-size: 12px !important;
-
   }
 }
 
-@media (min-width: 500px) and (max-width: 700px){
-  .myButton{
+@media (min-width: 500px) and (max-width: 700px) {
+  .myButton {
     font-size: 16px;
   }
-  .card-title{
+  .card-title {
     font-size: 15px;
   }
   .containera {
@@ -83,34 +90,34 @@ color: var(--white);
   }
 }
 
-@media  (min-width: 700px) and (max-width: 1200px){
-  
+@media (min-width: 700px) and (max-width: 1200px) {
   .containera {
     -moz-column-count: 4;
     column-count: 4;
   }
-  .card-title{
+  .card-title {
     font-size: 18px;
   }
 }
-@media (min-width: 1200px)   {
+@media (min-width: 1200px) {
   .containera {
     -moz-column-count: 5;
     column-count: 5;
   }
 }
-body{
+body {
   background-color: var(--white);
 }
-.myButton{
+.myButton {
   border-color: var(--buttonBackground);
   background-color: var(--buttonBackground);
-  color:#fefefe
+  color: var(--lightWhite);
+  
 }
-.searchStyle{
+.searchStyle {
   width: 100%;
 }
-.inputStyle{
+.inputStyle {
   width: 50% !important;
   max-width: 450px;
   min-width: 150px;
